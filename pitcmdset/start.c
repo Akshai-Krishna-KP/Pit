@@ -31,7 +31,7 @@ int make_dir(const char* path) {
     }
 }
 
-int main() {
+int cmd_start() {
     // Main pit file
     const char* pit_dir = ".pit";
 

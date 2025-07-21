@@ -45,7 +45,7 @@ char* int_to_str(int num) {
     return str;
 }
 
-int main(int argc, char *argv[]) {
+int cmd_hash_object(int argc, char *argv[]) {
                                             
     int write_flag = 0;
     const char* type = "blob";
