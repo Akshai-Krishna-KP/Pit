@@ -12,7 +12,7 @@
 #include <string.h>
 #include <errno.h>
 
-static char* PIT_DIR = NULL;
+// static char* PIT_DIR = NULL;
 
 // __PIT FINDER__
 char* pit_finder(void) {

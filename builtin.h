@@ -7,7 +7,7 @@
 #include <string.h>
 
 // Custom functions
-extern char* PIT_DIR;
+// extern char* PIT_DIR;
 char* pit_finder(void);
 
 #endif
