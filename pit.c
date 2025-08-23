@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "pit_cmd.h"
+
 /**
  * @brief structure that contain user input and function pointer
  * 
@@ -84,7 +86,7 @@ int main(int argc, const char **argv) {
      * 
      */
     if(!argc) {
-        cmd = "help";
+        *argv = "help";
         return 0;
     }
 
