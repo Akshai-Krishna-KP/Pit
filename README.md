@@ -9,7 +9,7 @@
 ## 🚀 Features
 
 - Basic version control operations (init, add, commit, etc.)
-- PIT-specific aliases for selected commands (e.g., `init` → `start`, `merge` → `mix`)
+- PIT-specific aliases for selected commands (e.g., `init` → `start`,..)
 - Command-line interface mimicking Git structure
 - Planned support for `.gitignore` (manual entry only; no autocomplete)
 
@@ -26,7 +26,7 @@
 | `log`          | `log`        | View the history of commits              |
 | `branch`       | `branch`     | Create or list branches                  |
 | `checkout`     | `checkout`   | Switch branches or restore files         |
-| `merge`        | `mix`        | Merge another branch into the current one|
+| `merge`        | `merge`      | Merge another branch into the current one|
 | `rebase`       | `rebase`     | Reapply commits on top of another branch |
 | `push`         | `push`       | Push local changes to a remote           |
 | `pull`         | `pull`       | Fetch and integrate with a remote branch |
