@@ -91,6 +91,10 @@ void error_checkup(int exit_status) {
     switch(exit_status) {
         case 30:
             fprintf(stderr, "Argument number or Value difference/disparancies");
+            break;
+        case 31:
+            fprintf(stderr, "Invalid Input Argument");
+            break;
         default:
             fprintf(stderr, "Un-indentified error");
     }
