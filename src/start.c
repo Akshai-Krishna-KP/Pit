@@ -160,7 +160,6 @@ int file_head(const char *pit_dir) {
 int cmd_start(int argc, const char **argv) {
 
     if(argc != 1) {
-        perror("Unspecified number of arguments");
         return 30;
     }
 

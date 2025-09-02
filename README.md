@@ -2,7 +2,8 @@
 
 **PIT** is a simplified, educational version-control tool inspired by Git. Built for learning and experimentation, it mimics Git's core features while offering a lightweight and developer-friendly experience.
 
-> ⚠️ PIT is not a replacement for Git. It is intended for learning and skill development.
+> ⚠️ This work only in UNIX based system.
+> ⚠️ PIT is not Git. It is intended for learning and skill development.
 
 ---
 
