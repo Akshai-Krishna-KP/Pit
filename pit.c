@@ -33,21 +33,22 @@ struct pit_cmd {
  * 
  * @note
  * Add the name and function name (cmd_{name}) in this array when add new commands.
+ * Keep the command in alpahabetic order.
  */
 static struct pit_cmd cmd[] = {
+    // {"add", cmd_add}, ///@todo
+    // {"branch", cmd_branch}, ///@todo
+    // {"checkout", cmd_checkout}, ///@todo
+    // {"clone", cmd_clone}, ///@todo
+    // {"commit", cmd_commit}, ///@todo
+    // {"config", cmd_config}, ///@todo
+    // {"log", cmd_log}, ///@todo
+    // {"merge", cmd_merge}, ///@todo
+    // {"pull", cmd_pull}, ///@todo
+    // {"push", cmd_push}, ///@todo
+    // {"rebase", cmd_rebase}, ///@todo
     {"start", cmd_start},
-    {"add", cmd_add},
-    {"commit", cmd_commit},
-    {"config", cmd_config},
-    {"clone", cmd_clone},
-    {"status", cmd_status},
-    {"log", cmd_log},
-    {"branch", cmd_branch},
-    {"checkout", cmd_checkout},
-    {"merge", cmd_merge},
-    {"rebase", cmd_rebase},
-    {"push", cmd_push},
-    {"pull", cmd_pull},
+    // {"status", cmd_status}, ///@todo
 };
 
 /**
@@ -66,13 +67,33 @@ static struct pit_cmd cmd[] = {
  * @param argv 
  * @return struct pit_cmd* 
  */
-struct pit_cmd *fun_finder(const char *argv) {
+struct pit_cmd *fun_finder(const char **argv) {
     for(int i=0; i<sizeof(cmd)/sizeof(cmd[0]); i++) {
         struct pit_cmd *p = cmd + i; // same as cmd[i];
-        if(!strcmp(argv, p->cmd_name)) 
+        if(!strcmp(*argv, p->cmd_name)) 
             return p;
     }
     return NULL;
+}
+
+/**
+ * @brief Program that output custom error command
+ * 
+ * @details
+ * This program will take the exist status from other function
+ * And using switch-case print out the error custom error msg in readable form
+ * to stderr.
+ * 
+ * @param exit_status 
+ */
+void error_checkup(int exit_status) {
+
+    switch(exit_status) {
+        case 30:
+            fprintf(stderr, "Argument number or Value difference/disparancies");
+        default:
+            fprintf(stderr, "Un-indentified error");
+    }
 }
 
 int main(int argc, const char **argv) {
@@ -98,12 +119,9 @@ int main(int argc, const char **argv) {
      * 
      */
     struct pit_cmd *cmd_struct = fun_finder(argv);
-    cmd_struct->fn(argc, argv); // Call the function
+    int exist_status = cmd_struct->fn(argc, argv); // Call the function
 
-    /**
-     * @todo Error checkup function and module.
-     * 
-     */
+    error_checkup(exist_status);
 
     return 0;
 }

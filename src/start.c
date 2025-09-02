@@ -159,7 +159,17 @@ int file_head(const char *pit_dir) {
  */
 int cmd_start(int argc, const char **argv) {
 
-    ///@todo Check whether .pit already exist
+    if(argc != 1) {
+        perror("Unspecified number of arguments");
+        return 30;
+    }
+
+    // Check whether .pit directory already exist or not.
+    struct stat st = {0};
+    if(stat("./.pit", &st) == 0 && S_ISDIR(st.st_mode)) {
+        printf("Repo already exist\n");
+        return 0;
+    }
 
     // Declare the pit dir and subdir
     const char *pit_dir = ".pit"; ///< Base PIT directory
